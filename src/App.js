@@ -18,26 +18,33 @@ class App extends Component {
   }
 
   async inputSearch(term) {
-    const profileResponse = await fetch(
-      `https://api.github.com/users/${term}?client_id=${
-        this.state.id
-      }&client_secret=${this.state.secret}`
-    );
+    if (term === "") {
+      this.setState({
+        profile: [],
+        repos:[]
+      })
+    } else {
+      const profileResponse = await fetch(
+        `https://api.github.com/users/${term}?client_id=${
+          this.state.id
+        }&client_secret=${this.state.secret}`
+      );
 
-    const repoResponse = await fetch(
-      `https://api.github.com/users/${term}/repos?per_page=${
-        this.state.repos_count
-      }&sort=${this.state.repos_sort}&client_id=${
-        this.state.id
-      }&client_secret=${this.state.secret}`
-    );
+      const repoResponse = await fetch(
+        `https://api.github.com/users/${term}/repos?per_page=${
+          this.state.repos_count
+        }&sort=${this.state.repos_sort}&client_id=${
+          this.state.id
+        }&client_secret=${this.state.secret}`
+      );
 
-    const profile = await profileResponse.json();
-    const repos = await repoResponse.json();
-    this.setState({
-      profile,
-      repos
-    });
+      const profile = await profileResponse.json();
+      const repos = await repoResponse.json();
+      this.setState({
+        profile,
+        repos
+      });
+    }
   }
 
   render() {
