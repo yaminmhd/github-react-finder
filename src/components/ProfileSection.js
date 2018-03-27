@@ -10,16 +10,16 @@ const ProfileSection = (props) => {
           </div>
           <div className = "col-md-9">
             <span className ="badge badge-primary">Public Repos: {props.profile.public_repos}</span>
-            <span className ="badge badge-secondary">Public Gists: {props.profile.public_gists}</span>
-            <span className ="badge badge-success">Followers: {props.profile.followers}</span>
-            <span className ="badge badge-info">Following: {props.profile.following}</span>
+            <span className ="badge badge-secondary ml-2">Public Gists: {props.profile.public_gists}</span>
+            <span className ="badge badge-success ml-2">Followers: {props.profile.followers}</span>
+            <span className ="badge badge-info ml-2">Following: {props.profile.following}</span>
             <br/>
             <br/>
             <ul className = "list-group">
-              <li className=" list-group-item">Company: {props.profile.company}</li>
-              <li className=" list-group-item">Website/Blog: {props.profile.blog}</li>
-              <li className=" list-group-item">Location: {props.profile.location}</li>
-              <li className=" list-group-item">Member Since: {props.profile.created_at}</li>
+              <li className=" list-group-item">Company: {props.profile.company ? props.profile.company : 'Not Available'}</li>
+              <li className=" list-group-item">Website: {props.profile.blog ? props.profile.blog : 'Not Available'}</li>
+              <li className=" list-group-item">Location: {props.profile.location ? props.profile.location : 'Not Available' }</li>
+              <li className=" list-group-item">Member Since: {props.profile.created_at ? props.profile.created_at : 'Not Available'}</li>
             </ul>
           </div>
       </div>
