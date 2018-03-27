@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import ProfileSection from "./components/ProfileSection";
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -41,10 +41,14 @@ class App extends Component {
   }
 
   render() {
+    const { profile, repos } = this.state;
+    const inputNull =
+      (profile.length === 0 || profile.message === "Not Found") &&
+      (repos.length === 0 || repos.message === "Not Found");
     return (
       <div className="container">
         <SearchBar onSearchTermChange={term => this.inputSearch(term)} />
-        <ProfileSection profile={this.state.profile} />
+        {!inputNull && <ProfileSection profile={this.state.profile} />}
         <Footer />
       </div>
     );
