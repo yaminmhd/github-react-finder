@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import ProfileSection from "./components/ProfileSection";
+import RepoSection from "./components/RepoSection";
 import Footer from "./components/Footer";
 
 class App extends Component {
@@ -21,8 +22,8 @@ class App extends Component {
     if (term === "") {
       this.setState({
         profile: [],
-        repos:[]
-      })
+        repos: []
+      });
     } else {
       const profileResponse = await fetch(
         `https://api.github.com/users/${term}?client_id=${
@@ -56,6 +57,7 @@ class App extends Component {
       <div className="container">
         <SearchBar onSearchTermChange={term => this.inputSearch(term)} />
         {!inputNull && <ProfileSection profile={this.state.profile} />}
+        {!inputNull && <RepoSection/>}
         <Footer />
       </div>
     );
