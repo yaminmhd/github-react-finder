@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import SearchBar from "./components/SearchBar";
-import ProfileSection from "./components/ProfileSection";
-import RepoSection from "./components/RepoSection";
-import Footer from "./components/Footer";
+import SearchBar from "./components/SearchBar/SearchBar";
+import ProfileSection from "./components/ProfileSection/ProfileSection";
+import RepoSection from "./components/RepoSection/RepoSection";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class App extends Component {
       <div className="container">
         <SearchBar onSearchTermChange={term => this.inputSearch(term)} />
         {!inputNull && <ProfileSection profile={this.state.profile} />}
-        {!inputNull && <RepoSection/>}
+        {!inputNull && <RepoSection repos={this.state.repos}/>}
         <Footer />
       </div>
     );
