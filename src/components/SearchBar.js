@@ -11,13 +11,20 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          onChange={event => this.handleInputChange(event.target.value)}
-          value={this.state.searchTerm}
-          type="text"
-          placeholder="Enter username"
-        />
+      <div className="searchContainer">
+        <div className="search card card-body">
+          <h1>Find Github Users</h1>
+          <p className="lead">
+            Enter username to fetch a user profile and repositories
+          </p>
+          <input
+            className="form-control"
+            onChange={event => this.handleInputChange(event.target.value)}
+            value={this.state.searchTerm}
+            type="text"
+            placeholder="Enter username"
+          />
+        </div>
       </div>
     );
   }

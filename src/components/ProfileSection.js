@@ -5,7 +5,7 @@ const ProfileSection = (props) => {
     <div className="card card-body mb-3">
         <div className =" row">
           <div className = "col-md-3">
-            <img className = "img-fluid mb-2" src={props.profile.avatar_url} alt="avatar"/>
+            <img className = "img-fluid mb-2 rounded-circle" src={props.profile.avatar_url} alt="avatar"/>
             <a href= {props.profile.html_url} target='/' className = "btn btn-primary btn-block mb-4"> View Profile </a>
           </div>
           <div className = "col-md-9">

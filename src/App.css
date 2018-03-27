@@ -27,3 +27,6 @@
   to { transform: rotate(360deg); }
 }
 
+.searchContainer{
+  margin: 15px auto;
+}

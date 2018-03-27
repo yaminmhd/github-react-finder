@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import ProfileSection from "./components/ProfileSection";
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
     };
   }
 
-  async inputSearch(term){
+  async inputSearch(term) {
     const profileResponse = await fetch(
       `https://api.github.com/users/${term}?client_id=${
         this.state.id
@@ -44,16 +45,7 @@ class App extends Component {
       <div className="container">
         <SearchBar onSearchTermChange={term => this.inputSearch(term)} />
         <ProfileSection profile={this.state.profile} />
-        {/*<input
-          type="text"
-          placeholder="Enter a username"
-          value={this.state.enteredUser.name}
-          onChange={this.handleInputChange.bind(this)}
-        />
-        <button className="btn btn-primary" onClick={this.getUser.bind(this)}>
-          Get User Details
-        </button>
-        <User user={user} />*/}
+        <Footer />
       </div>
     );
   }
