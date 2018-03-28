@@ -1,21 +1,16 @@
 import React from "react";
+import RepoItem from "../RepoItem/RepoItem";
 
 const RepoSection = props => {
   return (
-    <div className="card card-body mb-3">
-      <p className="lead">
-        List of repositories
-      </p>
-      <ul className="list-group">
-        {props.repos.map((repo, index) => {
-          return (
-            <li className="list-group-item" key={index}>
-              Repo #{index}: {repo.name}
-              <span className="badge badge-primary badge-pill">{repo.stargazers_count}</span>
-            </li>
-          );
-        })}
-      </ul>
+    <div className="card card-body mb-3 d-flex flex-row flex-wrap">
+      {props.repos.map((repo, index) => {
+        return (
+          <div key={index}>
+            <RepoItem repo={repo} />
+          </div>
+        );
+      })}
     </div>
   );
 };
