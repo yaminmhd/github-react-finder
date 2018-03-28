@@ -1,11 +1,15 @@
-import React from 'react';
-import {shallow} from 'enzyme';
-import RepoSection from './RepoSection';
-import nock from 'nock';
+import React from "react";
+import { shallow } from "enzyme";
+import RepoSection from "./RepoSection";
+import fetchMock from "fetch-mock";
+import nock from "nock";
+import SearchBar from "../SearchBar/SearchBar";
 
-describe('RepoSection', ()=> {
-  it('should render RepoSection properly', () => {
-    const id = "0411e12b010f75a6c751";
-    const secret = "8e1123577ee45b8e1f24df68d24f71f286f12224";
+describe("RepoSection", () => {
+  it("should fetch RepoSection properly", () => {
+    const response = [{}];
+    const wrapper = shallow(<RepoSection repos={response} />);
+    console.log(wrapper.debug());
+    expect(wrapper.find('RepoItem')).toHaveLength(1);
   });
-})
+});

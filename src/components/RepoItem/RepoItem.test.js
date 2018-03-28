@@ -1,7 +1,7 @@
-import reaect from 'React';
+import React from 'react';
 
 describe('test', ()=>{
   it('should behave...', () => {
-    
+
   });
 })
