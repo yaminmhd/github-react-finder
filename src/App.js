@@ -15,7 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       profile: [],
-      repos: []
+      repos: [],
+      inputEntered: false
     };
   }
 
@@ -23,29 +24,27 @@ class App extends Component {
     if (term === "") {
       this.setState({
         profile: [],
-        repos: []
+        repos: [],
+        inputEntered: false
       });
     } else {
-      try {
-        const profileResponse = await fetch(
-          `https://api.github.com/users/${term}?client_id=${id}&client_secret=${secret}`
-        );
+      const profileResponse = await fetch(
+        `https://api.github.com/users/${term}?client_id=${id}&client_secret=${secret}`
+      );
 
-        const repoResponse = await fetch(
-          `https://api.github.com/users/${term}/repos?per_page=5
-          }&sort=created: asc
-          }&client_id=${id}&client_secret=${secret}`
-        );
+      const repoResponse = await fetch(
+        `https://api.github.com/users/${term}/repos?per_page=15
+          &sort=created:asc
+          &client_id=${id}&client_secret=${secret}`
+      );
 
-        const profile = await profileResponse.json();
-        const repos = await repoResponse.json();
-        this.setState({
-          profile,
-          repos
-        });
-      } catch (error) {
-        console.log(error);
-      }
+      const profile = await profileResponse.json();
+      const repos = await repoResponse.json();
+      this.setState({
+        profile,
+        repos,
+        inputEntered: true
+      });
     }
   }
 
@@ -53,18 +52,24 @@ class App extends Component {
     const search = _.debounce(term => {
       this.inputSearch(term);
     }, 300);
-    const { profile, repos } = this.state;
+
+    const { profile, repos, inputEntered } = this.state;
+
     const inputNull =
       (profile.length === 0 || profile.message === "Not Found") &&
       (repos.length === 0 || repos.message === "Not Found");
+
+    const inputEnteredButNoUser =
+      inputEntered === true &&
+      profile.message === "Not Found" &&
+      repos.message === "Not Found";
+
+
     return (
       <div className="container">
         <SearchBar onSearchTermChange={search} />
-        {!inputNull ? (
-          <ProfileSection profile={this.state.profile} />
-        ) : (
-          <ErrorPage />
-        )}
+        {!inputNull && <ProfileSection profile={this.state.profile} />}
+        {inputEnteredButNoUser && <ErrorPage/>}
         {!inputNull && <RepoSection repos={this.state.repos} />}
         <Footer />
       </div>
