@@ -9,7 +9,6 @@ describe("RepoSection", () => {
   it("should fetch RepoSection properly", () => {
     const response = [{}];
     const wrapper = shallow(<RepoSection repos={response} />);
-    console.log(wrapper.debug());
     expect(wrapper.find('RepoItem')).toHaveLength(1);
   });
 });

@@ -20,20 +20,23 @@ const ProfileDetailItem = props => {
       <ul className="list-group">
         <li className=" list-group-item">
           Company:
-          {props.detailItem.company ? props.detailItem.company : "Not Available"}
+          {props.detailItem.company
+            ? props.detailItem.company
+            : "Not Available"}
         </li>
         <li className=" list-group-item">
-          Website: {props.detailItem.blog ? props.detailItem.blog : "Not Available"}
+          Website:
+          {props.detailItem.blog ? props.detailItem.blog : "Not Available"}
         </li>
         <li className=" list-group-item">
           Location:
-          {props.detailItem.location ? props.detailItem.location : "Not Available"}
+          {props.detailItem.location
+            ? props.detailItem.location
+            : "Not Available"}
         </li>
         <li className=" list-group-item">
           Member Since:
-          {props.detailItem.created_at
-            ? props.detailItem.created_at
-            : "Not Available"}
+          {props.detailItem.created_at}
         </li>
       </ul>
     </React.Fragment>
