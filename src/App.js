@@ -6,7 +6,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import ProfileSection from "./components/ProfileSection/ProfileSection";
 import RepoSection from "./components/RepoSection/RepoSection";
 import Footer from "./components/Footer/Footer";
-import {getUserData} from '../src/api';
+import { getUserData } from "../src/api";
 
 class App extends Component {
   constructor(props) {
@@ -26,12 +26,16 @@ class App extends Component {
         inputEntered: false
       });
     } else {
-      const {profile,repos} = await getUserData(term);
-      this.setState({
-        profile,
-        repos,
-        inputEntered: true
-      });
+      try {
+        const { profile, repos } = await getUserData(term);
+        this.setState({
+          profile,
+          repos,
+          inputEntered: true
+        });
+      } catch (error) {
+        throw error;
+      }
     }
   }
 
@@ -39,13 +43,13 @@ class App extends Component {
     const { profile, repos, inputEntered } = this.state;
 
     const inputNull =
-    (profile.length === 0 || profile.message === "Not Found") &&
-    (repos.length === 0 || repos.message === "Not Found");
+      (profile.length === 0 || profile.message === "Not Found") &&
+      (repos.length === 0 || repos.message === "Not Found");
 
     const inputEnteredButNoUser =
-    inputEntered === true &&
-    profile.message === "Not Found" &&
-    repos.message === "Not Found";
+      inputEntered === true &&
+      profile.message === "Not Found" &&
+      repos.message === "Not Found";
 
     const search = _.debounce(term => {
       this.inputSearch(term);
@@ -55,7 +59,7 @@ class App extends Component {
       <div className="container">
         <SearchBar onSearchTermChange={search} />
         {!inputNull && <ProfileSection profile={this.state.profile} />}
-        {inputEnteredButNoUser && <ErrorPage/>}
+        {inputEnteredButNoUser && <ErrorPage />}
         {!inputNull && <RepoSection repos={this.state.repos} />}
         <Footer />
       </div>
