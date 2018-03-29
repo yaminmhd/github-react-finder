@@ -15,7 +15,7 @@ export const getProfile = async term => {
     const profile = await profileResponse.json();
     return profile;
   } catch (error) {
-    throw error;
+    throw(new Error('Error receiving profile'));
   }
 };
 
@@ -28,19 +28,18 @@ export const getRepos = async term => {
     const repos = await repoResponse.json();
     return repos;
   } catch (error) {
-    throw error;
+    throw(new Error('Error receiving repos'));
   }
 };
 
 export const getUserData = async term => {
   try {
-    const profileResult = await Promise.all([getProfile(term), getRepos(term)]);
-    const [profile, repos] = profileResult;
+    const [profile, repos] = await Promise.all([getProfile(term), getRepos(term)]);
     return {
       profile,
       repos
     };
   } catch (error) {
-    throw error;
+    throw(new Error('Error receiving UserData'));
   }
 };

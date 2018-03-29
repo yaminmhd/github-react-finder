@@ -34,7 +34,7 @@ class App extends Component {
           inputEntered: true
         });
       } catch (error) {
-        throw error;
+        throw(new Error('Error setting profile and repo'));
       }
     }
   }
