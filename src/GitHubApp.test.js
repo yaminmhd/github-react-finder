@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import GitHubApp from "./GitHubApp";
 import { shallow } from "enzyme";
 import { getUserData, getProfile } from "./api";
 import fetchMock from "fetch-mock";
@@ -9,14 +9,14 @@ afterEach(fetchMock.restore);
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<GitHubApp />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it("should intercecpt any api calls and set state", async () => {
+it("should intercept any api calls and set state", async () => {
   const term = "yaminmhd";
   fetchMock.get(`*`, JSON.stringify({ test: `profileObject` }));
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<GitHubApp />);
   await wrapper.instance().inputSearch(term);
 
   expect(wrapper.state("profile")).toHaveProperty(`test`, `profileObject`);
