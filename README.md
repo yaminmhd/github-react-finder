@@ -24,7 +24,7 @@ Say what the step will be
 ```
 1. git clone to local machine
 2. yarn install to retrieve packages and dependencies
-3. yarn start to start application on localhost:3000
+3. yarn start to start application
 ```
 
 And repeat

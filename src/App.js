@@ -12,6 +12,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/githubapp" component={GitHubApp} />
+          
         </Switch>
       </div>
     </BrowserRouter>

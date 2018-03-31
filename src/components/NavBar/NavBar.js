@@ -37,7 +37,7 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink tag={Link} to="/githubapp">
+                <NavLink href="https://github.com/yaminmhd/github-react-finder" to="/githubapp">
                   <i className="fab fa-github-square large"></i>
                 </NavLink>
               </NavItem>
