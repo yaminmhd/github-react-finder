@@ -11,8 +11,8 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="searchContainer">
-        <div className="search card card-body">
+      <div>
+        <div className="card card-body">
           <h1>Find Github Users</h1>
           <p className="lead">
             Enter username to fetch a user profile and repositories

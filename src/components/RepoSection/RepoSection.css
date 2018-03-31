@@ -1,0 +1,20 @@
+.card-container {
+  display: grid;
+  grid-template-rows: 40px 1fr;
+  grid-gap: 10px;
+}
+
+.repo-title {
+  grid-column: 1/4;
+  text-align: center;
+}
+
+.repo-grid {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  justify-items: center;
+  align-items: start;
+  grid-auto-rows: 1fr;
+}
+

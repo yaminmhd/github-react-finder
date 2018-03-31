@@ -19,23 +19,23 @@ const ProfileDetailItem = props => {
       <br />
       <ul className="list-group">
         <li className=" list-group-item">
-          Company:
+          {`Company: `}
           {props.detailItem.company
             ? props.detailItem.company
             : "Not Available"}
         </li>
         <li className=" list-group-item">
-          Website:
+          {`Website: `}
           {props.detailItem.blog ? props.detailItem.blog : "Not Available"}
         </li>
         <li className=" list-group-item">
-          Location:
+          {`Location: `}
           {props.detailItem.location
             ? props.detailItem.location
             : "Not Available"}
         </li>
         <li className=" list-group-item">
-          Member Since:
+          {`Member Since: `}
           {props.detailItem.created_at}
         </li>
       </ul>
