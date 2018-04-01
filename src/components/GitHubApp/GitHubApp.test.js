@@ -15,7 +15,7 @@ it("renders without crashing", () => {
 
 it("should intercept any api calls and set state", async () => {
   const term = "yaminmhd";
-  fetchMock.get(`*`, JSON.stringify({ test: `profileObject` }));
+  fetchMock.mock(`*`, JSON.stringify({ test: `profileObject` }));
   const wrapper = shallow(<GitHubApp />);
   await wrapper.instance().inputSearch(term);
 

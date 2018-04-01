@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./GitHubApp.css";
-import {debounce} from "lodash";
+import { debounce } from "lodash";
 import SearchBar from "../SearchBar/SearchBar";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ProfileSection from "../ProfileSection/ProfileSection";
@@ -34,7 +34,7 @@ class GitHubApp extends Component {
           inputEntered: true
         });
       } catch (error) {
-        throw(new Error('Error setting profile and repo'));
+        throw new Error("Error setting profile and repo");
       }
     }
   }
