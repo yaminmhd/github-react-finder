@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import GitHubApp from "./GitHubApp";
 import { shallow } from "enzyme";
-import { getUserData, getProfile } from "./api";
+import { getUserData, getProfile } from "../util/api";
 import fetchMock from "fetch-mock";
 
 afterEach(fetchMock.restore);

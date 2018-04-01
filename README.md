@@ -37,7 +37,9 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+```
+1. yarn test to start unit testing
+```
 
 ### Break down into end to end tests
 
@@ -65,6 +67,7 @@ Add additional notes about how to deploy this on a live system
 * [bootstrap](https://github.com/twbs/bootstrap) - For overall application styling
 * [bootswatch](https://github.com/thomaspark/bootswatch/) - For overall application theme
 * [reactstrap](https://github.com/reactstrap/reactstrap) - Usage of reactstrap for the purpose of navbar
+* [font-awesome](https://github.com/FortAwesome/Font-Awesome) - Usage of fonts
 
 ## Contributing
 
@@ -76,16 +79,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Yamin** - *Initial work*
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc

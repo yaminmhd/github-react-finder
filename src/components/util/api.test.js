@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import { getProfile, getRepos } from "./api";
 import fetchMock from "fetch-mock";
-import SearchBar from "./components/SearchBar/SearchBar";
 import { shallow } from "enzyme";
 
 const term = "yaminmhd";

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./GitHubApp.css";
 import {debounce} from "lodash";
-import SearchBar from "./components/SearchBar/SearchBar";
-import ErrorPage from "./components/ErrorPage/ErrorPage";
-import ProfileSection from "./components/ProfileSection/ProfileSection";
-import RepoSection from "./components/RepoSection/RepoSection";
-import Footer from "./components/Footer/Footer";
-import { getUserData } from "../src/api";
+import SearchBar from "../SearchBar/SearchBar";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import ProfileSection from "../ProfileSection/ProfileSection";
+import RepoSection from "../RepoSection/RepoSection";
+import Footer from "../Footer/Footer";
+import { getUserData } from "../util/api";
 
 class GitHubApp extends Component {
   constructor(props) {
