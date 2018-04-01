@@ -16,19 +16,19 @@ Following commands to get a development env running
 2. `yarn install` to get all the dependencies and packages
 3. `yarn start` to start application on `localhost:3000`
 
-######LandingPage Component
+###### LandingPage Component
 * Github icon on the right links to the repo page
 * The React Github Finder link on the top left will bring user back to this `LandingPage` component
 * Click on the `View Application` button
 
 ![alt text](/public/screenshots/img1.png "Landing Page")
 
-######GitHubApp Component
+###### GitHubApp Component
 * Key in a letter of the required user in the `SearchBar` component
 
 ![alt text](/public/screenshots/img2.png "Main Application Component")
 
-######Result Component
+###### Result Component
 * `SearchBar` component will automatically fetch the data from Github Api and display result in the `ProfileSection` && `RepoSection` components
 
 ![alt text](/public/screenshots/img3.png "Result Component")
@@ -39,7 +39,7 @@ Following commands to get a development env running
 
 ![alt text](/public/screenshots/img4.png "RepoSection Component")
 
-######ErrorPage Component
+###### ErrorPage Component
 * Invalid users will result in the `ErrorPage` component to appear
 
 ![alt text](/public/screenshots/img5.png "Error Component")
