@@ -3,6 +3,7 @@ import React from "react";
 const ProfileDetailItem = props => {
   return (
     <React.Fragment>
+      {/* The repetition in the following 4 spans (from lines 7-18) suggests to us that we can refactor them in a component :-) */}
       <span className="badge badge-primary">
         Public Repos: {props.detailItem.public_repos}
       </span>
