@@ -6,6 +6,7 @@ const RepoItem = props => {
     <div className="repo-item" style={{ width: "18rem" }}>
       <h5 className="card-title ">{props.repo.name.toUpperCase()}</h5>
       <span className="badge badge-primary">{props.repo.language}</span>
+      {/* The repetition in the following 4 spans (from lines 10-28) suggests to us that we can refactor them in a component :-) */}
       <span className="badge badge-secondary ml-2">
         <i class="fas fa-code-branch" />
         {` `}

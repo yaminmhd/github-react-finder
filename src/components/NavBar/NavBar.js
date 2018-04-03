@@ -29,16 +29,20 @@ class NavBar extends Component {
   render() {
     return (
       <div>
+        {/* Nice, mobile-responsive navbar! */}
         <Navbar className="high-index" color="faded" light expand="md">
           <NavbarBrand tag={Link} to="/">
-            <span className='navbrand'>React GitHub Finder</span>
+            <span className="navbrand">React GitHub Finder</span>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="https://github.com/yaminmhd/github-react-finder" to="/githubapp">
-                  <i className="fab fa-github-square large"></i>
+                <NavLink
+                  href="https://github.com/yaminmhd/github-react-finder"
+                  to="/githubapp"
+                >
+                  <i className="fab fa-github-square large" />
                 </NavLink>
               </NavItem>
             </Nav>

@@ -2,6 +2,7 @@ import React from "react";
 
 const ProfileImageItem = props => {
   return (
+    // nice and mobile-responsive component! 
     <React.Fragment>
       <img
         className="img-fluid mb-2 rounded-circle"

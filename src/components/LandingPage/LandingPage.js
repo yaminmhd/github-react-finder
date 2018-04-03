@@ -8,6 +8,9 @@ const LandingPage = () => {
     <header className="vid-header vid-container">
       <div className="vid-fullscreen">
         <video src="mac.mp4" autoPlay="true" loop="true" />
+        {/* The animated landing page is a nice touch. However, you can
+        consider replacing the video with a gif. Having your user download 4.8MB can be problematic
+        in areas with poor connectivity */}
       </div>
       <div className="header-overlay" />
       <div className="header-content text-md-center">
