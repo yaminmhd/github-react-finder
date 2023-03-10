@@ -14,7 +14,7 @@ class GitHubApp extends Component {
     this.state = {
       profile: [],
       repos: [],
-      inputEntered: false
+      inputEntered: false,
     };
   }
 
@@ -23,7 +23,7 @@ class GitHubApp extends Component {
       this.setState({
         profile: [],
         repos: [],
-        inputEntered: false
+        inputEntered: false,
       });
     } else {
       try {
@@ -31,7 +31,7 @@ class GitHubApp extends Component {
         this.setState({
           profile,
           repos,
-          inputEntered: true
+          inputEntered: true,
         });
       } catch (error) {
         throw new Error("Error setting profile and repo");
@@ -51,7 +51,7 @@ class GitHubApp extends Component {
       profile.message === "Not Found" &&
       repos.message === "Not Found";
 
-    const search = debounce(term => {
+    const search = debounce((term) => {
       this.inputSearch(term);
     }, 200);
 
